@@ -1,6 +1,18 @@
 ## NodeJS ORM Modification Timestamps
 This plugin adds the ability to keep track of `created_at` and `modified_at` properties on models defined using the [node-orm2][node-orm2] module.
 
+## Dependencies
+You'll need [orm][node-orm2] to use this plugin, but other than that there are no external dependencies.
+
+## DBMS Support
+Any driver supported by ORM is supported by this plugin.
+
+## Usage
+```javascript
+model.timestamp();
+model.timestamp({ option: value });
+```
+
 ## Example
 ```javascript
 var orm = require('orm'),
