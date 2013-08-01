@@ -1,7 +1,7 @@
 ## NodeJS ORM Modification Timestamps
 This plugin adds the ability to keep track of `created_at` and `modified_at` properties on models defined using the [node-orm2][node-orm2] module.
 
-<a href="https://npmjs.org/package/orm"><img src="https://badge.fury.io/js/orm-timestamps.png" alt="" style="max-width:100%;"></a>
+<a href="https://npmjs.org/package/orm-timestamps"><img src="https://badge.fury.io/js/orm-timestamps.png" alt="" style="max-width:100%;"></a>
 
 ## Install
 ```
