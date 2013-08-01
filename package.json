@@ -1,0 +1,31 @@
+{
+  "author": "Benjamin Pannell <admin@sierrasoftworks.com>",
+  "name": "orm-timestamps",
+  "description": "ORM modification and creation timestamps",
+  "keywords": [
+    "orm",
+    "timestamps",
+    "modification",
+    "creation",
+    "date"
+  ],
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "url": "http://github.com/SPARTAN563/node-orm-timestamps"
+  },
+  "contributors": [
+	{ "name" : "Benjamin Pannell", "email" : "admin@sierrasoftworks.com" }
+  ],
+  "scripts": {
+    "test": "make"
+  },
+  "main": "./lib/orm-timestamps",
+  "engines": {
+    "node": "*"
+  },
+  "analyse": false,
+  "dependencies": {
+    "orm": ">= 2.1.0"
+  }
+}
