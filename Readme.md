@@ -14,12 +14,6 @@ You'll need [orm][node-orm2] to use this plugin, but other than that there are n
 ## DBMS Support
 Any driver supported by ORM is supported by this plugin.
 
-## Usage
-```javascript
-model.timestamp();
-model.timestamp({ option: value });
-```
-
 ## Example
 ```javascript
 var orm = require('orm'),
@@ -39,10 +33,9 @@ orm.connect("mysql://username:password@host/database", function(err, db) {
 		username: String,
 		email: String,
 		password: String
+	}, {
+		timestamp: true
 	});
-
-	//Add timestamping logic to the model
-	user.timestamp();
 });
 
 
