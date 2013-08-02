@@ -42,8 +42,8 @@ orm.connect("mysql://username:password@host/database", function(err, db) {
 ```
 
 ## Options
-- `createdProperty` **string** Determines the name of the property use to store the created timestamp (default `"created_at"`)
-- `modifiedProperty` **string** Determines the name of the property used to store the modified timestamp (default `"modified_at"`)
+- `createdProperty` **string|false** Determines the name of the property use to store the created timestamp (default `"created_at"`). If set to `false`, disables this property.
+- `modifiedProperty` **string|false** Determines the name of the property used to store the modified timestamp (default `"modified_at"`). If set to `false`, disables this property.
 - `dbtype` **object** Allows you to set the type of column used by the DB to allow for custom data types (default `{ type: 'date', time: true }`)
 - `now` **function** Allows you to specify a custom function used to set the current time data for the database (default `function() { return new Date(); }`)
 
