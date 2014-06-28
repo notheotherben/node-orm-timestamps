@@ -37,8 +37,7 @@ orm.connect("mysql://username:password@host/database", function(err, db) {
 		email: String,
 		password: String
 	}, {
-		timestamp: true,
-    expiresProperty: false
+		timestamp: true
 	});
 });
 
