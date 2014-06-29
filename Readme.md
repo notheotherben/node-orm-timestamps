@@ -50,7 +50,7 @@ orm.connect("mysql://username:password@host/database", function(err, db) {
 - `modifiedProperty` **string|false** 
   Determines the name of the property used to store the modified timestamp (default `"modified_at"`). If set to `false`, disables this property.
 - `expiresProperty` **string|false** 
-  Determines the name of the property used to store the expiry timestamp (default `"expires_at"`). If set to `false`, disables this property.
+  Determines the name of the property used to store the expiry timestamp for example `"expires_at"` (default `false`). If set to `false`, disables this property.
 - `dbtype` **object** 
   Allows you to set the type of column used by the DB to allow for custom data types (default `{ type: 'date', time: true }`).
 - `now` **function**
