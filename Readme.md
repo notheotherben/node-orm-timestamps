@@ -25,7 +25,7 @@ orm.connect("mysql://username:password@host/database", function(err, db) {
 	db.use(modts, {
 		createdProperty: 'created_at',
 		modifiedProperty: 'modified_at',
-		expiresProperty: 'expires_at',
+		expiresProperty: false,
 		dbtype: { type: 'date', time: true },
 		now: function() { return new Date(); },
 		expiry: function() { var d = new Date(); return d.setMinutes(d.getMinutes() + 60); },
