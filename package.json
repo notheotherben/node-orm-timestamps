@@ -16,7 +16,8 @@
   },
   "contributors": [
     { "name" : "Benjamin Pannell", "email" : "admin@sierrasoftworks.com" },
-    { "name": "zlotnika", "website": "https://github.com/zlotnika" }
+    { "name": "zlotnika", "website": "https://github.com/zlotnika" },
+    { "name": "ajostergaard", "website": "https://github.com/ajostergaard" }
   ],
   "scripts": {
     "test": "make"
