@@ -25,8 +25,10 @@ orm.connect("mysql://username:password@host/database", function(err, db) {
 	db.use(modts, {
 		createdProperty: 'created_at',
 		modifiedProperty: 'modified_at',
+		expiresProperty: false,
 		dbtype: { type: 'date', time: true },
 		now: function() { return new Date(); },
+		expiry: function() { var d = new Date(); return d.setMinutes(d.getMinutes() + 60); },
 		persist: true
 	});
 
@@ -47,15 +49,19 @@ orm.connect("mysql://username:password@host/database", function(err, db) {
   Determines the name of the property use to store the created timestamp (default `"created_at"`). If set to `false`, disables this property.
 - `modifiedProperty` **string|false** 
   Determines the name of the property used to store the modified timestamp (default `"modified_at"`). If set to `false`, disables this property.
+- `expiresProperty` **string|false** 
+  Determines the name of the property used to store the expiry timestamp for example `"expires_at"` (default `false`). If set to `false`, disables this property.
 - `dbtype` **object** 
   Allows you to set the type of column used by the DB to allow for custom data types (default `{ type: 'date', time: true }`).
 - `now` **function**
   Allows you to specify a custom function used to set the current time data for the database (default `function() { return new Date(); }`).
+- `expiry` **function**
+  Allows you to specify a custom function used to set the expiry time data for the database (default `function() { var d = new Date(); d.setMinutes(d.getMinutes() + 60); return d; }`).
 - `persist` **boolean**
   Used to prevent creation and modification timestamps from being stored in the database (default `true`).
 
 ## Features
-- Easy to add created and modified date/time information to your models
+- Easy to add creation, modification and expiration date/time information to your models
 - Highly customizable
 - Supports existing beforeCreate/beforeSave hooks through the use of a robust wrapper function
 - Allows values to be stored "in-memory" if usage scenarios don't require them to be stored in the database.
