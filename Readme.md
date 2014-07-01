@@ -37,11 +37,21 @@ orm.connect("mysql://username:password@host/database", function(err, db) {
 		email: String,
 		password: String
 	}, {
+		id: 'username',
 		timestamp: true
 	});
+
+	var userDetails = db.define('user_details', {
+		username: String,
+		first_name: String,
+		last_name: String
+	}, {
+		id: 'username',
+		timestamp: {
+			createdProperty: false
+		}
+	});
 });
-
-
 ```
 
 ## Options
@@ -65,5 +75,6 @@ orm.connect("mysql://username:password@host/database", function(err, db) {
 - Highly customizable
 - Supports existing beforeCreate/beforeSave hooks through the use of a robust wrapper function
 - Allows values to be stored "in-memory" if usage scenarios don't require them to be stored in the database.
+- Allows custom options to be set on a per-table basis if needed
 
 [node-orm2]: https://github.com/dresende/node-orm2
