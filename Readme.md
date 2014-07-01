@@ -28,7 +28,7 @@ orm.connect("mysql://username:password@host/database", function(err, db) {
 		expiresProperty: false,
 		dbtype: { type: 'date', time: true },
 		now: function() { return new Date(); },
-		expiry: function() { var d = new Date(); return d.setMinutes(d.getMinutes() + 60); },
+		expires: function() { var d = new Date(); return d.setMinutes(d.getMinutes() + 60); },
 		persist: true
 	});
 
@@ -44,7 +44,7 @@ orm.connect("mysql://username:password@host/database", function(err, db) {
 
 ```
 
-## Options
+## Global Options
 - `createdProperty` **string|false** 
   Determines the name of the property use to store the created timestamp (default `"created_at"`). If set to `false`, disables this property.
 - `modifiedProperty` **string|false** 
@@ -55,10 +55,22 @@ orm.connect("mysql://username:password@host/database", function(err, db) {
   Allows you to set the type of column used by the DB to allow for custom data types (default `{ type: 'date', time: true }`).
 - `now` **function**
   Allows you to specify a custom function used to set the current time data for the database (default `function() { return new Date(); }`).
-- `expiry` **function**
+- `expires` **function**
   Allows you to specify a custom function used to set the expiry time data for the database (default `function() { var d = new Date(); d.setMinutes(d.getMinutes() + 60); return d; }`).
 - `persist` **boolean**
   Used to prevent creation and modification timestamps from being stored in the database (default `true`).
+
+## Options per table
+- `timestamp` **true|false** 
+  Enables the plugin for this table (default `false`). If set to `true`, the plugin is enabled.
+- `createdTimestamp` **true|false** 
+  Enables the created timestamp for this table (default `true`). If set to `false`, disables this property for this table only. Requires `timestamp` and `createdProperty`.
+- `modifiedTimestamp` **true|false** 
+  Enables the modified timestamp for this table (default `true`). If set to `false`, disables this property for this table only. Requires `timestamp` and `modifiedProperty`.
+- `expiresTimestamp` **true|false** 
+  Enables the expires timestamp for this table (default `true`). If set to `false`, disables this property for this table only. Requires `timestamp` and `expiresProperty`. Note `expiresProperty` is `false` by default.
+- `expires` **function** 
+  Allows you to override the global expires function for this table. If not set defaults to global `expires` function.
 
 ## Features
 - Easy to add creation, modification and expiration date/time information to your models
