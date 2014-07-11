@@ -9,15 +9,24 @@
     "creation",
     "date"
   ],
-  "version": "0.5.0",
+  "version": "0.5.1",
   "license": "MIT",
   "repository": {
     "url": "http://github.com/SPARTAN563/node-orm-timestamps"
   },
   "contributors": [
-    { "name" : "Benjamin Pannell", "email" : "admin@sierrasoftworks.com" },
-    { "name": "zlotnika", "website": "https://github.com/zlotnika" },
-    { "name": "ajostergaard", "website": "https://github.com/ajostergaard" }
+    {
+      "name": "Benjamin Pannell",
+      "email": "admin@sierrasoftworks.com"
+    },
+    {
+      "name": "zlotnika",
+      "website": "https://github.com/zlotnika"
+    },
+    {
+      "name": "ajostergaard",
+      "website": "https://github.com/ajostergaard"
+    }
   ],
   "scripts": {
     "test": "make"
