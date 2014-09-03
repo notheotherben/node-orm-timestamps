@@ -9,7 +9,7 @@
     "creation",
     "date"
   ],
-  "version": "0.5.1",
+  "version": "0.5.2",
   "license": "MIT",
   "repository": {
     "url": "http://github.com/SPARTAN563/node-orm-timestamps"
